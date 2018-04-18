@@ -8,13 +8,19 @@ function setup() {
   noCanvas();
   textfield = createInput();
   textfield.input(newText);
-  sum=createButton('submit');
-  var url = api + apiKey + query;
+  sum=createButton('sumit');
+  sum.mousePressed();
+    
+}
+
+function mousePressed() {
+    var url = api + apiKey + query;
   loadJSON(url, gotData);
 }
 
+
 function newText() {
-   query= "&q="+textfield.value();
+   query = "&q=" + textfield.value();
 }
 
 function gotData(giphy) {
